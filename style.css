@@ -1,12 +1,123 @@
+:root {
+    --dark-purply: hsl(300, 43%, 22%);
+    --main-subtitle: hsl(303, 10%, 53%);
+    --stars-background: hsl(300, 24%, 96%);
+    --review-subtitle: hsl(333, 80%, 67%);
+}
+
+html {
+    height: 100%;
+}
+
 body {
     background-image: url("./images/bg-pattern-top-desktop.svg"), url("./images/bg-pattern-bottom-desktop.svg");
     background-position: left top, right bottom;
     background-repeat: no-repeat, no-repeat;
+    font-family: 'Spartan', sans-serif;
+    font-size: 15px;
+    height: 100%;
+    overflow-y: hidden;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 18em auto;
+    grid-template-areas: 
+        "title-container star-reviews"
+        "user-reviews-container user-reviews-container";
+    margin: 0 auto;
+    margin-top: 3em;
+    height: 100%;
+    max-width: 80%;
+}
+
+.title-container {
+    color: var(--dark-purply);
+    grid-area: title-container;
+    max-width: 80%;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 3em;
+}
+
+.subtitle {
+    color: var(--main-subtitle);
+}
+
+.star-reviews-container {
+    color: var(--dark-purply);
+    grid-area: star-reviews;
+    justify-self: end;
+    align-self: center;
+}
+
+.star-review {
+    background-color: var(--stars-background);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border-radius: 10px;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+.stars {
+    align-self: center;
+}
+
+.user-reviews-container {
+    color: white;
+    grid-area: user-reviews-container;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3em;
+}
+
+.user-review {
+    background-color: var(--dark-purply);
+    border-radius: 10px;
+    padding: 2em;
+    max-height: 12em;
+    width: 25%;
+}
+
+.second-rev {
+    margin-top: 1em;
+}
+
+.third-rev {
+    margin-top: 2em;
+}
+
+.user-pic-container {
+    display: flex;
+}
+
+.user-pic {
+    border-radius: 50%;
+    height: 2.8em;
+    margin-right: 1em;
+}
+
+.user-pic-text {
+    height: 3em;
+    top: 10px;
+}
+
+.user-pic-subtitle {
+    color: var(--review-subtitle);
+    margin-top: 0.5em;
 }
 
 .attribution {
+    position: absolute;
+    bottom: 0;
+    left: 40%;
     font-size: 11px;
-    text-align: center;
   }
 
   .attribution a {
